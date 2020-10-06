@@ -1,0 +1,51 @@
+---
+title: "Chicken Weights Analysis"
+author: "Fahad Almansour"
+date: "10/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+
+```
+# Descriptive Statistics
+
+
+```{r chickwts, echo=FALSE}
+chickwts %>% 
+  group_by(feed)%>%
+  summarise(n = length(feed),
+            avg = mean(weight),
+            SD = sd(weight))
+
+```
+
+# Plots
+
+
+```{r chickwts1, echo=FALSE}
+ggplot(chickwts, aes(feed, weight)) +
+  geom_boxplot()
+```
+```{r chickwts2, echo=FALSE}
+ggplot(chickwts, aes(feed, weight)) +
+  geom_jitter(width = 1) + stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1), col = "red")
+
+```
+
+# Inferential Statistics
+The one-way ANOVA summary:
+```{r chickwts3, echo=FALSE}
+chickwts_lm <- lm(weight ~ feed, data = chickwts)
+anova(chickwts_lm) 
+```
+# Tukey’s Post-hoc test:
+```{r chickwts4, echo=FALSE}
+chickwts_lm <- lm(weight ~ feed, data = chickwts)
+chickwts.av <- aov(chickwts_lm)
+tukey.test <- TukeyHSD(chickwts.av)
+tukey.test
+```

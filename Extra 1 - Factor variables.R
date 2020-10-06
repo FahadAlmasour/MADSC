@@ -30,7 +30,7 @@ test_tb$test
 
 # But if you do have a factor, coercion is difficult
 mean(test_df$test)
-# Solution: 
+# Solution:
 as.numeric(test_df$test) # no!
 # First coerce to chr
 as.numeric(as.character(test_df$test))
@@ -44,3 +44,4 @@ PlantGrowth$group
 PlantGrowth$group <- factor(PlantGrowth$group, c("Fertilizer A", "Fertilizer B", "Control"))
 PlantGrowth
 PlantGrowth$group
+
