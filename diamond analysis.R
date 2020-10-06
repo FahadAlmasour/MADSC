@@ -1,5 +1,5 @@
 # Diamond Analysis
-# Rick Scavetta
+# Fahad Almansour
 # 29.09.2020
 # A small case study for EDA and stats
 
