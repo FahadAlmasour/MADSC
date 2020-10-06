@@ -1,5 +1,5 @@
 # An analysis of Plant Growth
-# Rick Scavetta
+# Fahad Almansour
 # 28.09.2020
 # The first case study in R
 
