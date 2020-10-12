@@ -1,6 +1,3 @@
 # MADSC
-Misk Academy Data Science Cours
+Misk Academy Data Science Course
 
-test
-
-hello update from faris....
