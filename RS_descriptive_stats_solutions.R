@@ -1,5 +1,5 @@
 # Martian analysis
-# Rick Scavetta
+# Fahad Almansour
 # 08.10.2020
 
 # Load packages
@@ -11,7 +11,7 @@ martian <- read_tsv("data/martian.txt")
 # Explore the data:
 glimpse(martian)
 
-# Descriptive statistics ---- 
+# Descriptive statistics ----
 # For the height varible at Site I only
 # Try to calculate from scratch (first principles)
 
